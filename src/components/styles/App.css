@@ -44,3 +44,13 @@
     border-radius: 10px;
     box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
 }
+
+@media (max-width: 1820px) {
+    .App {
+        border-radius: 0px;
+        margin: 0px;
+        width: 95vh;
+        height: 100vw;
+        transform-origin: center;
+    }
+}
