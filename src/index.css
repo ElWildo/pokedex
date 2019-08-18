@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 1900px) {
+@media (orientation: portrait) {
     body {
         transform: rotate(90deg);
         transform-origin: center;
