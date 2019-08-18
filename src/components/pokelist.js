@@ -10,6 +10,8 @@ class PokeList extends Component {
         this.state = {
             apiToCall: global.API + "?limit=10",
             pokemonDisplayed: [],
+            count: 0,
+            tot: 0,
             loading: false
         };
         this.myRef = React.createRef();
@@ -18,7 +20,7 @@ class PokeList extends Component {
     handleScroll = (e) => {
         var el =  ReactDOM.findDOMNode(this).getBoundingClientRect()
         var lastLi = this.myRef.current.getBoundingClientRect()
-        if (el.y + el.height > lastLi.y + lastLi.height && !this.state.loading) {
+        if (el.y + el.height > lastLi.y + lastLi.height && !this.state.loading && this.state.count<this.state.tot) {
             this.loadMore();
         }
     };
@@ -37,7 +39,9 @@ class PokeList extends Component {
             .then(data => this.setState({
                 pokemonDisplayed: this.state.pokemonDisplayed.concat(data.results),
                 apiToCall: data.next,
-                loading: false
+                loading: false,
+                count: this.state.count + data.results.length,
+                tot: data.count
             }))
             .catch(function (error) { console.log(error) })
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/pokecell.css';
-
+import miss from "../assets/miss.png" 
 
 class PokeCell extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class PokeCell extends Component {
       .then(response => response.json())
       .then(data => this.setState({
         style: {
-          backgroundImage: "url(" + data.sprites.front_default + ")"
+          backgroundImage: data.sprites.front_default? "url(" + data.sprites.front_default + ")" : "url(" + miss + ")"
         }
       }))
       .catch(function (error) { console.log(error) })
