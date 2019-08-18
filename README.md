@@ -2,9 +2,9 @@
 
 In the master branch is possible to find the source code
 
-at http://ElWildo.github.io/pokedex is possible to find the app already deployed and running
+At http://ElWildo.github.io/pokedex is possible to find the app already deployed and running
 
-if you want to clone the repository and run it locally follow those steps:
+If you want to clone the repository and run it locally follow those steps:
 
 1. Clone the repository in a folder on your machine
 1. cd into the folder
